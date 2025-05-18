@@ -6,46 +6,48 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif; /* Adicionando uma fonte fallback */
+    font-family: 'Poppins', sans-serif;
     color: white;
     background-color: black;
 }
 
-
 header {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end; /* 'right' não é válido, substituído por flex-end */
     padding: 8px;
     gap: 1rem;
     height: 50px;
-
 }
 
-ul {
+nav ul {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     gap: 1rem;
     padding-right: 8px;
     padding-top: 5px;
     flex-wrap: wrap;
+    align-items: center; /* para alinhar verticalmente os itens */
 }
 
-li{
+nav ul li {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-a{
+nav ul li a {
     color: white;
+    font-weight: 500;
+    font-size: 16px;
 }
 
-a:hover{
-    color:rgb(131, 131, 131);
-    transition: .08s;
+nav ul li a:hover {
+    color: rgb(131, 131, 131);
+    transition: 0.08s;
     transform: scale(1.05);
 }
 
-button{
+nav ul button {
     background-color: yellow;
     border: none;
     gap: 8px;
@@ -53,127 +55,238 @@ button{
     font-size: 16px;
     border-radius: 25px;
     color: black;
+    cursor: pointer;
+    padding: 8px 0;
+    font-weight: 600;
+    transition: 0.2s;
 }
 
-button:hover{
-    color:rgb(255, 230, 0);
-    transition: .08s;
-    transform: scale(1.05);
+nav ul button:hover {
+    color: rgb(255, 230, 0);
     background-color: rgba(255, 255, 0, 0.233);
+    transform: scale(1.05);
 }
 
-main{
+main {
     display: flex;
     padding: 32px;
     color: white;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    flex-wrap: wrap;
 }
-
 
 .imagemfoto {
     height: 250px;
     border-radius: 50%;
     border: 3px solid yellow;
     cursor: pointer;
+    object-fit: cover;
 }
 
-.textos {
-    text-align: justify;
+.textospri {
+    max-width: 600px;
+    text-align: center;
 }
 
-h1{
+.textospri h2.text-line {
+    font-weight: 300;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.textospri h1 {
     font-size: 60px;
+    font-weight: 700;
 }
 
-h2#sobre{
-    text-align: left; /* Alinha o texto à esquerda */
-    width: 100%; /* Faz o h2 ocupar toda a largura disponível */
-    margin-bottom: 16px; /* Adiciona um espaço abaixo do h2 */
+.textospri strong {
     color: yellow;
 }
 
-strong{
-    color: yellow;
-}
-
-
-.sobremim{
-    width: 95%; /* Define a largura da seção para 80% */
-    margin: 0 auto; /* Centraliza a seção */
+.sobremim {
+    width: 95%;
+    margin: 0 auto;
     padding: 16px;
+}
+
+.sobremim .textos h2#sobre {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 16px;
+    color: yellow;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.sobremim .textos p.who {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+strong {
+    color: yellow;
 }
 
 .experiências {
     border-top: solid 1px yellow;
-    width: 95%; /* Define a largura da seção para 80% */
-    margin: 0 auto; /* Centraliza a seção */
+    width: 95%;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Cria duas colunas iguais */
-    gap: 2rem; /* Espaço entre as colunas */
-    padding: 16px; /* Espaçamento interno da seção */
-    text-align: left; /* Alinha o texto à esquerda */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 16px;
+    text-align: left;
     align-items: center;
     justify-items: center;
 }
 
-.experiências h2 {
-    grid-column: span 2; /* Faz o título ocupar as duas colunas */
-    align-items: center; /* Centraliza o título */
+.experiências h2#experiencia {
+    grid-column: span 2;
+    text-align: center;
     color: yellow;
+    font-weight: 700;
+    font-size: 36px;
 }
 
 .grid-item {
     display: flex;
-    flex-direction: column; /* Organiza os itens em uma coluna */
-    gap: 0.5rem; /* Espaço entre os parágrafos */
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 18px;
 }
 
 .experiências p:hover {
-    color:grey
+    color: grey;
+    cursor: default;
 }
-
 
 .profissional {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo da seção */
+    align-items: center;
     color: yellow;
-    justify-items: center;
     border-top: solid 1px yellow;
-    width: 95%; /* Define a largura da seção para 80% */
-    margin: 0 auto; /* Centraliza a seção */
-    height: 100%;
+    width: 95%;
+    margin: 0 auto;
+    padding: 16px;
+    min-height: 100%;
+    text-align: center;
 }
 
 .profissional h2 {
-    align-self: center; /* Alinha apenas o h2 à esquerda */
-    padding: 16px; /* Adiciona um espaçamento à esquerda */
     color: yellow;
+    font-weight: 700;
+    font-size: 36px;
     margin-bottom: 16px;
-
 }
 
-
-.profissional img{
+.profissional a img {
     width: 180px;
     height: 160px;
     border-radius: 50%;
     border: 2px solid yellow;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.profissional p{
+.profissional a img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.profissional p {
     padding: 16px;
     text-align: justify;
     margin-top: 16px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
 }
 
-footer section{
+footer section {
     margin-top: 36px;
     text-align: center;
     color: #fff;
     font-size: 10px;
-    justify-content: end;
-    align-items: end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+}
+
+/* Media Query para telas até 1080x1920 */
+/* Centralização e ajustes para telas pequenas */
+@media (max-width: 720px) {
+    header {
+        display: none; /* Oculta a navbar no mobile */
+    }
+
+    main {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 24px 16px;
+        align-items: center;
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .textospri {
+        max-width: 100%;
+        text-align: center; /* Centraliza os textos */
+        padding: 0 12px;
+    }
+
+    .textospri h2.text-line {
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 12px;
+    }
+
+    .textospri h1 {
+        font-size: 32px;
+        font-weight: 700;
+        word-wrap: break-word; /* Quebra palavras longas */
+        white-space: normal; /* Permite quebra de linha */
+        line-height: 1.2;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .imagemfoto {
+        height: 180px;
+        margin-bottom: 20px;
+    }
+
+    .sobremim,
+    .experiências,
+    .profissional {
+        width: 100%;
+        padding: 12px 16px;
+        text-align: center; /* Centraliza textos nas seções */
+    }
+
+    .experiências {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .experiências h2#experiencia,
+    .sobremim .textos h2#sobre,
+    .profissional h2 {
+        text-align: center;
+    }
+
+    .profissional a img {
+        width: 140px;
+        height: 120px;
+    }
+
+    footer section {
+        font-size: 11px;
+        margin-top: 28px;
+        padding: 10px;
+        text-align: center;
+    }
 }
